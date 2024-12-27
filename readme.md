@@ -1,2 +1,3 @@
 ## Basic Data Structure -CodeBase
-Let's Create a solid foundation  🤩 
+
+Let's Create a solid foundation 🤩

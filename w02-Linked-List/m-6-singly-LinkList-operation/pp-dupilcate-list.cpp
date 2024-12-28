@@ -23,18 +23,6 @@ void printList(Node *head)
     printList(head->next);
 }
 
-int size(Node *head)
-{
-
-    int size = 0;
-    while (head != NULL)
-    {
-        head = head->next;
-        size++;
-    }
-    return size;
-}
-
 void insert(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
@@ -47,6 +35,19 @@ void insert(Node *&head, Node *&tail, int val)
     }
     tail->next = newNode;
     tail = newNode;
+}
+bool isAvailable(Node *curr, int val)
+{
+    while (curr != NULL)
+    {
+        if (curr->val == val)
+        {
+            return true;
+        }
+
+        curr = curr->next;
+    }
+    return false;
 }
 
 int main()
@@ -61,7 +62,17 @@ int main()
             break;
         insert(head, tail, n);
     }
-    cout << "size is " << size(head) << endl;
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        if (isAvailable(temp->next, temp->val))
+        {
+            cout << "YES" << endl;
+            return 0;
+        }
+        temp = temp->next;
+    }
+    cout << "NO" << endl;
 
     return 0;
 }

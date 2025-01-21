@@ -25,14 +25,14 @@ void print(Node *head, Node *tail)
     }
     cout << endl
          << "--------------------" << endl;
-    // tmp = tail;
-    // while (tmp != NULL)
-    // {
-    //     cout << tmp->val << " ";
-    //     tmp = tmp->prev;
-    // }
-    // cout << endl
-    //      << "--------------------" << endl;
+    tmp = tail;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->prev;
+    }
+    cout << endl
+         << "--------------------" << endl;
 }
 void insertAtHead(Node *&head, Node *&tail, int val)
 {
@@ -61,6 +61,22 @@ void insertAtTail(Node *&head, Node *&tail, int val)
     tail = newNode;
 }
 
+void insertAt(Node *&head, int pos, int val)
+{
+    Node *newNode = new Node(val);
+    Node *tmp = head;
+    pos = pos - 1;
+    while (pos--)
+    {
+        tmp = tmp->next;
+    }
+    // cout << tmp->val << endl;
+    newNode->prev = tmp;
+    newNode->next = tmp->next;
+    tmp->next->prev = newNode;
+    tmp->next = newNode;
+}
+
 int main()
 {
     Node *head = NULL;
@@ -68,9 +84,15 @@ int main()
     int n;
     while (cin >> n)
     {
+        if (n == -1)
+            break;
         insertAtTail(head, tail, n);
-        print(head, tail);
     }
+    print(head, tail);
+    int pos, val;
+    cin >> pos >> val;
+    insertAt(head, pos, val);
+    print(head, tail);
 
     return 0;
 }

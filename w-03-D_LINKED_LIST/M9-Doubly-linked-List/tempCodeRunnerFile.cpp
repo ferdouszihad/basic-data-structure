@@ -1,8 +1,2 @@
-  // tmp = tail;
-    // while (tmp != NULL)
-    // {
-    //     cout << tmp->val << " ";
-    //     tmp = tmp->prev;
-    // }
-    // cout << endl
-    //      << "--------------------" << endl;
+ deleteFrom(head, tail, 1);
+    print(head, tail);

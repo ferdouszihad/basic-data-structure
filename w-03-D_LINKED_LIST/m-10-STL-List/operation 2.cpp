@@ -23,20 +23,5 @@ int main()
     }
     printList(li);
 
-    li.remove(3); // remove all the x from a list
-    printList(li);
-
-    li.sort(); // sort ascending order
-    printList(li);
-
-    li.sort(greater<int>()); // sort descending order
-    printList(li);
-
-    li.unique(); // remove duplicate element
-    printList(li);
-
-    li.reverse(); // reverse a list
-    printList(li);
-
-    return 0;
+        return 0;
 }

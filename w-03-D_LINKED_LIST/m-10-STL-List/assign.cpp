@@ -21,22 +21,18 @@ int main()
     {
         li.push_back(n);
     }
-    printList(li);
+    // assign the list to another list
+    list<int> li2;
 
-    li.remove(3); // remove all the x from a list
-    printList(li);
+    // list<int> li2;
+    // li2.assign(li.begin(), li.end());
 
-    li.sort(); // sort ascending order
-    printList(li);
+    // list<int> li2(li);
 
-    li.sort(greater<int>()); // sort descending order
-    printList(li);
+    // list<int> li2;
+    // li2 = li;
 
-    li.unique(); // remove duplicate element
-    printList(li);
-
-    li.reverse(); // reverse a list
-    printList(li);
+    printList(li2);
 
     return 0;
 }

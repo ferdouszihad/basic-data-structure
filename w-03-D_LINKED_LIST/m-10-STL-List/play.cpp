@@ -1,42 +1,68 @@
 #include <bits/stdc++.h>
 using namespace std;
-void printList(list<int> li)
+class Node
 {
-    if (li.empty())
+public:
+    int val;
+
+    Node *next;
+
+    Node(int val)
     {
-        cout << "List is Empty" << endl;
+        this->val = val;
+
+        next = NULL;
+    }
+};
+void printSList(Node *head)
+{
+    if (head == NULL)
+    {
+
         return;
     }
-    for (auto it : li)
+
+    cout << head->val << " ";
+    printSList(head->next);
+}
+
+void insertAtTail(Node *&head, Node *&tail, int val)
+{
+    Node *newNode = new Node(val);
+
+    if (head == NULL)
     {
-        cout << it << " ";
+        head = newNode;
+        tail = newNode;
+        return;
     }
-    cout << endl;
+    tail->next = newNode;
+    tail = newNode;
+}
+
+void reverse(Node *&head, Node *&tail, Node *tmp)
+{
+    if (tmp->next == NULL)
+    {
+        head = tmp;
+        return;
+    }
+    reverse(head, tail, tmp->next);
+    tmp->next->next = tmp;
+    tmp->next = NULL;
+    tail = tmp;
 }
 int main()
 {
-    list<int> li;
+    Node *head = NULL;
+    Node *tail = NULL;
     int n;
     while (cin >> n)
     {
-        li.push_back(n);
+        insertAtTail(head, tail, n);
     }
-    printList(li);
-
-    li.remove(3); // remove all the x from a list
-    printList(li);
-
-    li.sort(); // sort ascending order
-    printList(li);
-
-    li.sort(greater<int>()); // sort descending order
-    printList(li);
-
-    li.unique(); // remove duplicate element
-    printList(li);
-
-    li.reverse(); // reverse a list
-    printList(li);
+    reverse(head, tail, head);
+    printSList(head);
 
     return 0;
 }

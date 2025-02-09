@@ -1,18 +1,14 @@
-size = 1 | front = 10 | back = 10 | 
-size = 2 | front = 10 | back = 20 | 
-size = 3 | front = 10 | back = 40 | 
-10 have left✈️
-size = 2 | front = 20 | back = 40 | 
-size = 3 | front = 20 | back = 13 | 
-20 have left✈️
-size = 2 | front = 40 | back = 13 | 
-size = 3 | front = 40 | back = 40 | 
-40 have left✈️
-size = 2 | front = 13 | back = 40 | 
-13 have left✈️
-size = 1 | front = 40 | back = 40 | 
-40 have left✈️
-size = 0 | front = 0 | back = 0 | 
+size = 1 | front = 101 | back = 101 | 
+size = 2 | front = 101 | back = 102 | 
+101 have left✈️
+size = 1 | front = 102 | back = 102 | 
+size = 2 | front = 102 | back = 103 | 
+102 have left✈️
+size = 1 | front = 103 | back = 103 | 
+103 have left✈️
+Queuee is empty
+size = 1 | front = 104 | back = 104 | 
+104 have left✈️
 Queuee is empty
 Queuee is empty
 Queuee is empty

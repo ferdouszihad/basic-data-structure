@@ -1,13 +1,10 @@
-in 10
-in 20
-in 40
-out
-in 13
-out
-in 40
+in 101
+in 102
+out 
+in 103
 out
 out
-out
-out
+in 104
+out 
 out
 out

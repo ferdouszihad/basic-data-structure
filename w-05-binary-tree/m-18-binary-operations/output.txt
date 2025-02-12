@@ -1,0 +1,4 @@
+10 20 30 40 50 60 70 
+Total Node = 7
+Total Leaf = 3
+Maximum Height = 4

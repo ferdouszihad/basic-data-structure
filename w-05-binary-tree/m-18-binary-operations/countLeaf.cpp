@@ -88,28 +88,63 @@ void printTree(Node *root)
             q.push(f->right);
         }
     }
+    cout << endl;
+}
+
+int countNode(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+
+    int l = countNode(root->left);
+    int r = countNode(root->right);
+
+    return l + r + 1;
+}
+
+int countLeaf(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    if (root->left == NULL && root->right == NULL)
+    {
+        return 1;
+    }
+
+    int leftLeaf = countLeaf(root->left);
+    int rightLeaf = countLeaf(root->right);
+    return leftLeaf + rightLeaf;
+}
+int maxHeight(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    if (root->left == NULL && root->right == NULL)
+    {
+        return 1;
+    }
+    int lHeight =  1 + maxHeight(root->left);
+    int rHeight =  1 + maxHeight(root->right);
+
+    if (lHeight > rHeight)
+        return lHeight;
+    else
+        return rHeight;
 }
 int main()
 {
-    // Node *nodeA = new Node(10);
-    // Node *nodeB = new Node(20);
-    // Node *nodeC = new Node(30);
-    // Node *nodeD = new Node(40);
-    // Node *nodeE = new Node(50);
-    // Node *nodeF = new Node(60);
-    // Node *nodeG = new Node(70);
-
-    // nodeA->left = nodeB;
-    // nodeA->right = nodeC;
-
-    // nodeB->left = nodeD;
-    // nodeB->right = nodeE;
-
-    // nodeC->left = nodeF;
-    // nodeC->right = nodeG;
     Node *root = inputTree();
 
     printTree(root);
+    cout << "Total Node = " << countNode(root) << endl;
+    cout << "Total Leaf = " << countLeaf(root) << endl;
+    cout << "Maximum Height = " << maxHeight(root) << endl;
 
     return 0;
 }

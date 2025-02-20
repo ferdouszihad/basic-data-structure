@@ -5,6 +5,11 @@
     "new": "cpp",
     "*.tcc": "cpp",
     "ratio": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp"
   }
 }
